@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:local="clr-namespace:CrossPlatformSample"
+             x:Class="CrossPlatformSample.MainPage">
+
+    <StackLayout>
+        <StackLayout.BindingContext>
+            <local:RockScissorsStoneViewModel></local:RockScissorsStoneViewModel>
+        </StackLayout.BindingContext>
+        <Label Text="{Binding Path=TopMessage}"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               x:Name="topLabel" />
+        <StackLayout Orientation="Horizontal">
+            <Button Text="グー"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Command="{Binding Path=RockPaperStoneClick}" CommandParameter="0"
+            x:Name="rockButton" />
+            <Button Text="チョキ"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Command="{Binding Path=RockPaperStoneClick}" CommandParameter="1"
+            x:Name="scissorsButton" />
+            <Button Text="パー"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Command="{Binding Path=RockPaperStoneClick}" CommandParameter="2"
+            x:Name="paperButton" />
+        </StackLayout>
+        <Label Text="{Binding Path=Result}" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center"
+           x:Name="resultLabel"  />
+    </StackLayout>
+
+</ContentPage>
